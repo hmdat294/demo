@@ -15,9 +15,9 @@ export class IndexComponent {
   constructor(private http: HttpClient) { };
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8000/sp')
+    this.http.get('http://localhost:8000/api/sp')
      .subscribe((dataProduct: any) => {
-      this.Product = dataProduct;
+      this.Product = dataProduct.slice(0,6);
       console.log(this.Product);
       
     });

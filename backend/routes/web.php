@@ -6,5 +6,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('sp', [SPController::class, 'index']);
-Route::get('chitiet/{id}', [SPController::class, 'chitiet']);
+Route::get('api/sp', [SPController::class, 'index']);
+Route::get('api/chitiet/{id}', [SPController::class, 'chitiet']);
