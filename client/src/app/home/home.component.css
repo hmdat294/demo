@@ -1,0 +1,146 @@
+body{
+    padding:30px ;
+    background-color: #cecbcb77;
+}
+.container-story{
+    gap: 30px;
+    
+}
+.box-left{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+
+
+}
+.box-item{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px   ;
+    padding: 5px;
+    border-bottom: 0.5px solid #e9e7e7;
+    align-items: center;
+  
+}
+.box-item a{
+    text-decoration: none;
+}
+.box-item-text h6{
+    margin: 0;
+    font-weight: 400;
+}
+.box-item-text p{
+    margin: 0;
+    color: gray;
+    
+}
+
+
+.container-box-story{
+    display: flex;
+}
+
+.box-story{
+    position: relative;
+
+}
+.box-story .img-main{
+    width: 125px;
+    height: 200px;
+    border-radius: 10px;
+}
+.box-story .img-avata{
+    width: 30px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+
+}
+.box-story i{
+    position: absolute;
+    text-align: center;
+    bottom: 30px;
+    font-size: 30px;
+    left: 50px;
+    color: #fff;
+}
+.box-story p{
+position: absolute;
+text-align: center;
+width: 100%;
+bottom: -5px;
+color: #fff;
+}
+
+.box-status{
+    position: relative;
+    margin-top: 20px;
+    padding: 10px;
+    gap: 15px;
+    background-color: #fff;
+    box-shadow: 10px;
+    border-radius: 10px;
+    height: 60px;
+}
+.box-status .img-avata-status{
+    width: 40px;
+    border-radius: 50%;
+   
+}
+.box-status input{
+    border: 0.5px solid rgb(190, 186, 186);
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+}
+
+.box-tn{
+   
+    justify-content: space-between;
+    gap: 20px   ;
+    padding: 10px;
+    border-bottom: 0.5px solid #e9e7e7;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    width: 300px;
+    height: 80px;
+    position: relative;
+}
+.box-tn-ten{
+    justify-content: center;
+    position: absolute;
+    right: 150px;
+   
+   
+}
+.box-right{
+    
+}
+.box-tn .img-avata-tn{
+    width: 40px;
+    border-radius: 50%;
+}
+.box-tn .box-tn-icon{
+    position: absolute;
+    right: 50px;
+}
+.box-tn .box-tn-ten h6{
+    margin: 0;
+    font-weight: 800;
+   
+}
+.box-tn .box-tn-ten p{
+    margin: 0;
+    color: gray;
+}
+.box-tn-fen{
+    
+   background-color: #fff;
+    width: 300px;
+    height: 400px;
+     margin-top: 50px;
+     border-radius: 10px;
+     display: flex;
+}
