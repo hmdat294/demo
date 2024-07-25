@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.box-explore{
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+.box-text{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.box-text>span{
+    font-size: smaller;
+}
+.box-text>p{
+    margin: 0;
+    padding: 0;
+}
+.friend{
+    /* padding: 20px; */
+    margin-top: 50px;
+    border-radius: 15px;
+}
+
+.story{
+    position: relative;
+    width: 150px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.story>img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.story>div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.story>div>span{
+    text-align: center;
+    width: 100%;
+    color: aqua;
+}
