@@ -19,21 +19,4 @@ class SPController extends Controller
         return response()-> json($data);
     }
 
-
-
-    function themsp(Request $request) {
-        // Kiểm tra dữ liệu đầu vào
-        $validatedData = $request->validate([
-            'ten_sp' => 'required|string|max:255',
-            'ngay' => 'required|date',
-            'id_loai' => 'required|numeric',
-        ]);
-
-        // Tạo sản phẩm mới
-        $sp = Sanpham::create([
-            'ten_sp' => $validatedData['ten_sp'],
-            'ngay' => $validatedData['ngay'],
-            'id_loai' => $validatedData['id_loai'],
-        ]);
-    }
 }

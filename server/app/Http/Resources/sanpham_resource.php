@@ -18,7 +18,8 @@ class sanpham_resource extends JsonResource
             'id' => $this->id,
             'ten_sp' => $this->ten_sp,
             'gia_sp' => $this->gia,   
-            'id_loai' => $this->id_loai,   
+            'id_loai' => $this->id_loai,  
+            'hinh' => $this->hinh, 
             'cap_nhat' => $this->updated_at->format('d/m/Y')
             ];
     }

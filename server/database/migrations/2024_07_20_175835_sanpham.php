@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('ten_sp');
             $table->integer('gia');
             $table->integer('id_loai');
+            $table->string('hinh');
             $table->timestamps();
         });
     }

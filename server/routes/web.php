@@ -8,4 +8,4 @@ Route::get('/', function () {
 });
 Route::get('api/sp', [SPController::class, 'index']);
 Route::get('api/chitiet/{id}', [SPController::class, 'chitiet']);
-Route::get('api/themsp', [SPController::class, 'themsp']);
+Route::post('api/themsp', [SPController::class, 'themsp']);

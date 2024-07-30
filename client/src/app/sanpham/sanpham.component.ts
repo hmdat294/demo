@@ -1,10 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sanpham',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [HttpClientModule,CommonModule, RouterModule],
   templateUrl: './sanpham.component.html',
   styleUrl: './sanpham.component.css'
 })
@@ -23,4 +25,11 @@ export class SanphamComponent {
 
   }
 
+  xoasp(id:any){
+    if (confirm('Mày chắc chưa ?')== false ) return;
+    this.http.delete(`http://localhost:8000/api/admin/sp/${id}`).subscribe(() => {
+     
+      location.reload();
+    });
+  }
 }

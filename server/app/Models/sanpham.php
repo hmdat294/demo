@@ -11,5 +11,5 @@ class sanpham extends Model
 
     protected $table = 'sanpham';
     public $primaryKey = 'id';
-    protected $fillable = ['ten_sp', 'gia', 'id_loai'];
+    protected $fillable = ['ten_sp', 'gia', 'id_loai','hinh'];
 }

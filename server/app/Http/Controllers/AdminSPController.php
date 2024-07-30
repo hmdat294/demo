@@ -44,6 +44,7 @@ class AdminSPController extends Controller
         $sp->ten_sp  =  $request->ten_sp;
         $sp->gia     =  $request->gia;
         $sp->id_loai =  $request->id_loai;
+        $sp->hinh  =  $request->hinh;
         $sp->save();
 
         $data = new sanpham_resource($sp);
