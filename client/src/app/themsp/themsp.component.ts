@@ -1,25 +1,25 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ServiceNameService } from '../service-name.service'; 
 
 @Component({
   selector: 'app-themsp',
   standalone: true,
   imports: [FormsModule, HttpClientModule],
   templateUrl: './themsp.component.html',
-  styleUrl: './themsp.component.css',
+  styleUrls: ['./themsp.component.css'], 
 })
 export class ThemspComponent {
-  constructor(private http: HttpClient, private router:Router) {}
+  constructor(private service: ServiceNameService, private router: Router) {}
+
   themsp(form: any) {
-    console.log(form);
-    this.http
-      .post<any[]>('http://localhost:8000/api/admin/sp', form)
-      .subscribe((data: any) => {
-        this.router.navigate(['/sanpham']);
-      });
+    console.log(form); 
+
+    this.service.upData(form).subscribe((data: any) => {
+      console.log('Response:', data); 
+      this.router.navigate(['/sanpham']); 
+    });
   }
-
-
 }

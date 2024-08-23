@@ -2,43 +2,46 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ServiceNameService } from '../service-name.service';
 
 @Component({
   selector: 'app-suasp',
   standalone: true,
   imports: [FormsModule, HttpClientModule],
   templateUrl: './suasp.component.html',
-  styleUrl: './suasp.component.css',
+  styleUrls: ['./suasp.component.css'],
 })
 export class SuaspComponent {
+  sp: any;
+
   constructor(
     private http: HttpClient,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private service: ServiceNameService
   ) {}
-  sp: any;
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       const id = params['id'];
-
-      this.http
-        .get<any[]>(`http://localhost:8000/api/chitiet/${id}`)
-        .subscribe((data: any) => {
-          this.sp = data;
-          console.log(data);
-        });
+      this.service.getctData(id).subscribe((data: any) => {
+        this.sp = data;
+        console.log(data);
+      });
     });
   }
 
-  suasp(form: any) {
+  suasp(form: any): void {
     this.route.params.subscribe((params) => {
       const id = params['id'];
-    this.http
-      .put<any[]>(`http://localhost:8000/api/admin/sp/${id}`, form)
-      .subscribe((data: any) => {
-        this.router.navigate(['/sanpham']);
-      });
+      this.service.putData(id, form).subscribe(
+        (data) => {
+          this.router.navigate(['/sanpham']);
+        },
+        (error) => {
+          console.error('Cập nhật thất bại', error);
+        }
+      );
+    });
   }
-    )};
 }

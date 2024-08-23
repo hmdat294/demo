@@ -2,34 +2,37 @@ import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ServiceNameService } from '../service-name.service';
 
 @Component({
   selector: 'app-sanpham',
   standalone: true,
-  imports: [HttpClientModule,CommonModule, RouterModule],
+  imports: [HttpClientModule, CommonModule, RouterModule],
   templateUrl: './sanpham.component.html',
-  styleUrl: './sanpham.component.css'
+  styleUrls: ['./sanpham.component.css'], 
 })
 export class SanphamComponent {
-  constructor(private http: HttpClient) { }
+  data: any;
 
-  sanpham: any;
+  constructor(private http: HttpClient, private service: ServiceNameService) { }
 
   ngOnInit(): void {
-
-    this.http.get<any[]>('http://localhost:8000/api/sp').subscribe((data: any) => {
-      this.sanpham = data;
-      console.log(data);
-      
-    })
-
+    this.loadData(); 
   }
 
-  xoasp(id:any){
-    if (confirm('Mày chắc chưa ?')== false ) return;
-    this.http.delete(`http://localhost:8000/api/admin/sp/${id}`).subscribe(() => {
-     
-      location.reload();
+  loadData() {
+    this.service.getData().subscribe((data: any) => {
+      this.data = data;
+      console.log(data);
     });
   }
+
+  xoasp(id: any) {
+    if (!confirm('Mày chắc chưa?')) return;
+  
+    this.service.xoaData(id).subscribe(() => {
+      this.loadData(); 
+    });
+  }
+  
 }

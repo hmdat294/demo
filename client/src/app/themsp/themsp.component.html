@@ -1,6 +1,10 @@
-<form action="" (ngSubmit)="themsp(form.value)" #form="ngForm">
-    <input type="text" ngModel name="ten_sp">
-    <input type="text" ngModel name="id_loai">
-    <input type="text" ngModel name="gia_sp">
-    <button type="submit">AAA</button>
-</form>
+<form (ngSubmit)="themsp(form.value)" #form="ngForm">
+    <label for="tenSanPham">Tên sản phẩm:</label>
+    <input type="text" id="tenSanPham" name="tenSanPham" ngModel>
+  
+    <label for="giaSanPham">Giá sản phẩm:</label>
+    <input type="number" id="giaSanPham" name="giaSanPham" ngModel>
+  
+    <button type="submit">Thêm sản phẩm</button>
+  </form>
+  

@@ -1,6 +1,6 @@
-<form action="" (ngSubmit)="suasp(form.value)" #form="ngForm">
-    <input [(ngModel)]="sp.ten_sp" type="text" ngModel name="ten_sp">
-    <input  [(ngModel)]="sp.id_loai" type="text" ngModel name="id_loai">
-    <input   [(ngModel)]="sp.gia_sp" type="text" ngModel name="gia">
+<form (ngSubmit)="suasp(form.value)" #form="ngForm">
+    <input [(ngModel)]="sp.ten_sp" type="text" name="ten_sp">
+    <input [(ngModel)]="sp.id_loai" type="text" name="id_loai">
+    <input [(ngModel)]="sp.gia_sp" type="text" name="gia">
     <button type="submit">AAA</button>
 </form>
